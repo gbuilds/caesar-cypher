@@ -4,9 +4,11 @@ def caesar(string, key)
   letters_in_string.each do |letter|
     if ("a".."z").include? letter
       new_ordinal = letter.ord + key
+      new_ordinal -= 26 if new_ordinal > 122
       new_string << new_ordinal.chr
     elsif ("A".."Z").include? letter
       new_ordinal = letter.ord + key
+      new_ordinal -= 26 if new_ordinal > 90
       new_string << new_ordinal.chr
     else
       new_string << letter
@@ -14,5 +16,7 @@ def caesar(string, key)
   end
   puts new_string
 end
-
-caesar("abcABC$$$", 5)
+  
+caesar("abczABCZ$$$", 1)
+caesar("Hail Caesar", 3)
+caesar("I'm a Robot!!", 5)
