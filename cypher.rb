@@ -17,6 +17,4 @@ def caesar(string, key)
   puts new_string
 end
   
-caesar("abczABCZ$$$", 1)
 caesar("Hail Caesar", 3)
-caesar("I'm a Robot!!", 5)
